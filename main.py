@@ -5,9 +5,9 @@ import pytest
 def ddg_response():
    return requests.get('http://api.duckduckgo.com/?q=the-white-house/presidents/&format=json')
 
-def test_presidents_in_response(ddg_response):
-   data = ddg_response.json()
-   related_topics = data['RelatedTopics']
+def test_presidents(ddg_response):
+   rsp_data = ddg_response.json()
+   related_topics = rsp_data['RelatedTopics']
 
    presidents = [ 'Washington','Madison','Monroe', 'Jackson', 'Van Buren','Harrison','Tyler','Polk','Taylor',
                   'Fillmore','Pierce','Buchanan','Lincoln','Johnson','Grant','Hayes',
